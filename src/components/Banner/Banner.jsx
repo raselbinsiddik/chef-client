@@ -27,7 +27,7 @@ const Banner = () => {
                         alt="First slide"
                     />
                     <Carousel.Caption>
-                        <h3 className='text-4xl text-yellow-500 font-bold mb-4'>Differant Vegetable food</h3>
+                        <h3 className='text-4xl text-yellow-500 font-bold mb-4'>Differant type Vegetable food</h3>
                         <p className='font-bold text-xl mb-16'>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
                     </Carousel.Caption>
                 </Carousel.Item>
@@ -39,7 +39,7 @@ const Banner = () => {
                     />
 
                     <Carousel.Caption>
-                        <h3 className='text-4xl text-yellow-500 font-bold mb-4'>Different type in Fruite</h3>
+                        <h3 className='text-4xl text-yellow-500 font-bold mb-4'>Different type of Fruite</h3>
                         <p className='font-bold text-xl mb-16'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                     </Carousel.Caption>
                 </Carousel.Item>
