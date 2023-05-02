@@ -7,6 +7,7 @@ import banner1 from '../../assets/banner1.jpg'
 import banner2 from '../../assets/banner2.jpg'
 // eslint-disable-next-line no-unused-vars
 import banner3 from '../../assets/banner3.jpg'
+import Home from '../Home/Home';
 
 const Banner = () => {
     // eslint-disable-next-line no-undef
@@ -17,8 +18,8 @@ const Banner = () => {
         setIndex(selectedIndex);
     }
     return (
-        <Container className='mt-4 mb-4'>
-            <Carousel activeIndex={index} onSelect={handleSelect}>
+        <Container>
+            <Carousel className='mt-4 mb-4' activeIndex={index} onSelect={handleSelect}>
                 <Carousel.Item>
                     <img
                         className="d-block w-100 "
@@ -57,6 +58,7 @@ const Banner = () => {
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel> 
+            <Home></Home>
         </Container>
     );
 };
