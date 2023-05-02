@@ -2,10 +2,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+
 // eslint-disable-next-line react/prop-types
 const HomeData = ({ chef }) => {
+    // eslint-disable-next-line react/prop-types
     const {id, chef_name, chef_picture, likes, years_of_experience, num_recipes} = chef;
-    console.log(chef);
+    
     return (
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mb-6 bg-red-100 rounded-md'>
             <img className='rounded-md w-full h-72' src={chef_picture} alt="" />
