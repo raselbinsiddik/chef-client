@@ -8,9 +8,9 @@ const Header = () => {
             <nav className='bg-slate-200 p-5 flex justify-between'>
                 <Link className='font-bold text-3xl'>Bengol Chefs</Link>
                 <div className='text-xl'>
-                    <Link>Home</Link>
+                    <Link to="/">Home</Link>
                     <Link className='ms-2 mr-2'>Blog</Link>
-                    <Link>Login</Link>
+                    <Link to="/login">Login</Link>
                </div>
                 
             </nav>
