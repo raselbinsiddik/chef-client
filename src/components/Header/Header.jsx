@@ -2,7 +2,6 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
-import {  FaUserCircle } from 'react-icons/fa';
 import {  SiCodechef } from 'react-icons/si';
 import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 
@@ -33,13 +32,13 @@ const Header = () => {
                             </Nav>
                             <Nav>
                                 {
-                                    user &&
-                                    <FaUserCircle style={{ fontSize: '2rem' }}></FaUserCircle>
+                                    user && <img className='w-25 rounded-circle' src={user.photoURL} alt="" />
+                                   // <FaUserCircle style={{ fontSize: '2rem' }}></FaUserCircle>
                                 }
 
                                 {
                                     user ?
-                                        <Button onClick={handleLogOut} variant="secondery">Logout</Button> : <Link to="/login"><Button variant="secondery">Login</Button></Link>
+                                        <Button className='text-xl' onClick={handleLogOut} variant="secondery">Logout</Button> : <Link to="/login"><Button className='text-xl' variant="secondery">Login</Button></Link>
                                 }
 
                             </Nav>

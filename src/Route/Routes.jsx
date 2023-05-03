@@ -5,6 +5,8 @@ import Home from "../components/Home/Home";
 import Recipe from "../components/Recipe/Recipe";
 import Login from "../components/Login/Login";
 import Register from "../components/Register/Register";
+import NotFoun from "../components/NotFound/NotFoun";
+import Blog from "../components/Blog/Blog";
 
 // eslint-disable-next-line no-unused-vars
 const router = createBrowserRouter([
@@ -33,8 +35,18 @@ const router = createBrowserRouter([
             {
                 path: 'register',
                 element:<Register></Register>
+            },
+            {
+                path: '/blog',
+                element:<Blog></Blog>
             }
+            
         ]
+    },
+    {
+        path: '*',
+        element: <NotFoun></NotFoun>
     }
+
 ])
 export default router;
