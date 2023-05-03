@@ -8,7 +8,6 @@ const Recipe = () => {
     const a = useLoaderData();
     const { chef_name, chef_picture, food1_img, food2_img, food3_img, likes, description, years_of_experience, num_recipes, rating, recipe_name1, recipe_name2, recipe_name3 } = a;
 
-    console.log(a);
     return (
         <Container>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 mb-6 bg-red-100 rounded-md mt-4'>
