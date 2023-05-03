@@ -2,20 +2,51 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
+import {  FaUserCircle } from 'react-icons/fa';
+import {  SiCodechef } from 'react-icons/si';
+import { Button, Container, Nav, Navbar } from 'react-bootstrap';
+
 const Header = () => {
-    const { googleProvider } = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
+
+    const handleLogOut = () => {
+        logOut()
+            .then()
+            .catch(error =>
+                console.log(error));
+    }
     return (
         <div>
-            <nav className='bg-slate-200 p-5 flex justify-between'>
-                <Link className='font-bold text-3xl'>Bengol Chefs</Link>
-                <div className='text-xl'>
-                    <Link to="/">Home</Link>
-                    <Link className='ms-2 mr-2'>Blog</Link>
-                    <Link to="/login">{googleProvider.photoURL
- }Login</Link>
-               </div>
-                
-            </nav>
+            <Container>
+                <Navbar collapseOnSelect expand="lg" bg="light" variant="light" className='p-4'>
+                    <Container>
+
+                        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                        <Navbar.Collapse id="responsive-navbar-nav">
+                            <h1 className='text-2xl font-bold text-red-500 flex'><SiCodechef className='text-3xl mr-2'></SiCodechef> The Chef Server</h1>
+                            <Nav className="mx-auto text-xl">
+                                
+                                <Link to="/" className='mr-5'>Home</Link>
+                                <Link to="/blog">blog</Link>
+                                
+
+                            </Nav>
+                            <Nav>
+                                {
+                                    user &&
+                                    <FaUserCircle style={{ fontSize: '2rem' }}></FaUserCircle>
+                                }
+
+                                {
+                                    user ?
+                                        <Button onClick={handleLogOut} variant="secondery">Logout</Button> : <Link to="/login"><Button variant="secondery">Login</Button></Link>
+                                }
+
+                            </Nav>
+                        </Navbar.Collapse>
+                    </Container>
+                </Navbar>
+            </Container>
         </div>
     );
 };
