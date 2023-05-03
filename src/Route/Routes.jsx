@@ -5,8 +5,6 @@ import Home from "../components/Home/Home";
 import Recipe from "../components/Recipe/Recipe";
 import Login from "../components/Login/Login";
 import Register from "../components/Register/Register";
-import Footer from "../components/Footer/Footer";
-
 
 // eslint-disable-next-line no-unused-vars
 const router = createBrowserRouter([
