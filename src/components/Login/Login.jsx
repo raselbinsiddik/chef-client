@@ -9,7 +9,25 @@ import { AuthContext } from '../../Provider/AuthProvider';
 const auth = getAuth(app);
 
 const Login = () => {
-    const { googleProvider, githubProvider } = useContext(AuthContext);
+    const { googleProvider, githubProvider, loginUser } = useContext(AuthContext);
+
+    const handleLogin = event => {
+        event.preventDefault();
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+
+        console.log(email, password);
+        
+        loginUser(email, password)
+            .then(result => {
+                const login = result.user;
+                console.log(login);
+            })
+            .catch(error => {
+            console.log(error);
+        })
+    }
     
     const handleGoogleSignIn = () => {
         // eslint-disable-next-line no-undef
@@ -38,7 +56,7 @@ const Login = () => {
     return (
         <div>
             <div className='mt-3 text-center'>
-                <form>
+                <form onSubmit={handleLogin}>
                     <input className='p-4 m-3 border w-96 rounded-lg' type="email" name="email" id="" placeholder='Your Email' required /><br />
 
                     <input className='p-4 m-3 border w-96 rounded-lg' type="password" name="password" id="" placeholder='Password' required /><br />

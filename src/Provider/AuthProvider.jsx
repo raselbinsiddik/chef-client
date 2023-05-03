@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React, { createContext } from 'react';
-import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, getAuth } from "firebase/auth";
+import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import app from '../firebase/firebase.config';
 
 
@@ -13,19 +13,20 @@ const auth = getAuth(app);
 // eslint-disable-next-line react/prop-types
 const AuthProvider = ({ children }) => {
     
-    const googleProvider = new GoogleAuthProvider();
+    const googleProvider =  new GoogleAuthProvider();
     const githubProvider = new GithubAuthProvider();
     const createUser = (email, password) => {
-        return createUserWithEmailAndPassword(auth, email, password)
+        return createUserWithEmailAndPassword(auth, email, password);
         
     }
-    const logiUser = (email, password) => {
-        return sig
+    const loginUser = (email, password) => {
+        return signInWithEmailAndPassword(auth, email, password);
     }
     const authInfo = {
         googleProvider,
         githubProvider,
-        createUser
+        createUser,
+        loginUser
     }
     return (
         <AuthContext.Provider value={authInfo}>
