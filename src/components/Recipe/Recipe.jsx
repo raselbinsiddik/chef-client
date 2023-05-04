@@ -11,7 +11,6 @@ import { FaRegStar, FaStar } from 'react-icons/fa';
 const Recipe = () => {
     // eslint-disable-next-line no-unused-vars
     const { loading } = useContext(AuthContext);
-    const [accept, setAccept] = useState();
     const recipe = useLoaderData();
     const { chef_name, chef_picture, food1_img, food2_img, food3_img, likes, description, years_of_experience, num_recipes, rating, recipe_name1, recipe_name2, recipe_name3 } = recipe;
 
@@ -20,7 +19,6 @@ const Recipe = () => {
     }
 
     const handleAccept = () => {
-       
         toast('the recipe is your favorite is accept')
         
        
@@ -57,7 +55,7 @@ const Recipe = () => {
                             
                     
                         <p>Likes: {likes}</p>
-                        <button onClick={handleAccept} disabled={accept} className='bg-yellow-300 p-3 rounded-lg mt-2 '>Favourite</button>
+                        <button onClick={handleAccept}  className='bg-yellow-300 p-3 rounded-lg mt-2 '>Favourite</button>
                         </div>
                    </div>
                 <div className='border-2 mb-2'>
@@ -73,7 +71,7 @@ const Recipe = () => {
                         </Rating>
                             <span>{rating?.number}</span>{rating}</p>
                         <p>Likes: {likes}</p>
-                        <button onClick={handleAccept}  className='bg-yellow-300 p-3 rounded-lg mt-2' >Favourite</button>
+                        <button onClick={handleAccept}   className='bg-yellow-300 p-3 rounded-lg mt-2' >Favourite</button>
                         </div>
                     </div>
                 <div className='ms-2 border-2 mb-2'>
@@ -89,7 +87,7 @@ const Recipe = () => {
                         </Rating>
                             <span>{rating?.number}</span>{rating}</p>
                         <p>Likes: {likes}</p>
-                        <button onClick={handleAccept} className='bg-yellow-300 p-3 rounded-lg mt-2'>Favourite</button>
+                        <button onClick={handleAccept}  className='bg-yellow-300 p-3 rounded-lg mt-2'>Favourite</button>
                         </div>
                    </div>
            </div>
