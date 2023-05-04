@@ -5,6 +5,8 @@ import { Container, Spinner } from 'react-bootstrap';
 import {  useLoaderData} from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
 import { toast } from 'react-hot-toast';
+import Rating from 'react-rating';
+import { FaRegStar, FaStar } from 'react-icons/fa';
 
 const Recipe = () => {
     // eslint-disable-next-line no-unused-vars
@@ -43,7 +45,17 @@ const Recipe = () => {
                         <img className='rounded-md w-full h-72' src={food1_img} alt="" />
                         <div className='mx-auto text-2xl text-yellow-800 mt-10 mb-3'>
                         <h2 className='mb-2'>Name: {recipe_name1}</h2>
-                            <p className='mb-2'>Rating:  {rating}</p>
+                        <p className='mb-2'>Rating: <Rating
+                            placeholderRating={rating}
+                            readonly
+                            emptySymbol={<FaRegStar></FaRegStar>}
+                            placeholderSymbol={<FaStar></FaStar>}
+                            fullSymbol={<FaStar></FaStar>}>
+                        </Rating>
+                            <span>{rating?.number}</span>{rating}
+                        </p>
+                            
+                    
                         <p>Likes: {likes}</p>
                         <button onClick={handleAccept} disabled={accept} className='bg-yellow-300 p-3 rounded-lg mt-2 '>Favourite</button>
                         </div>
@@ -52,7 +64,14 @@ const Recipe = () => {
                     <img className='rounded-md w-full h-72' src={food2_img} alt="" />
                         <div className='mx-auto text-2xl text-yellow-800 mt-10 mb-3'>
                             <h2 className='mb-2'>Name: {recipe_name2}</h2>
-                            <p className='mb-2'>Rating:  {rating}</p>
+                        <p className='mb-2'>Rating:  <Rating
+                            placeholderRating={rating}
+                            readonly
+                            emptySymbol={<FaRegStar></FaRegStar>}
+                            placeholderSymbol={<FaStar></FaStar>}
+                            fullSymbol={<FaStar></FaStar>}>
+                        </Rating>
+                            <span>{rating?.number}</span>{rating}</p>
                         <p>Likes: {likes}</p>
                         <button onClick={handleAccept}  className='bg-yellow-300 p-3 rounded-lg mt-2' >Favourite</button>
                         </div>
@@ -61,7 +80,14 @@ const Recipe = () => {
                         <img className='rounded-md w-full h-72' src={food3_img} alt="" />
                         <div className='mx-auto text-2xl text-yellow-800 mt-10 mb-3'>
                             <h2 className='mb-2'>Name: {recipe_name3}</h2>
-                            <p className='mb-2'>Rating:  {rating}</p>
+                        <p className='mb-2'>Rating:  <Rating
+                            placeholderRating={rating}
+                            readonly
+                            emptySymbol={<FaRegStar></FaRegStar>}
+                            placeholderSymbol={<FaStar></FaStar>}
+                            fullSymbol={<FaStar></FaStar>}>
+                        </Rating>
+                            <span>{rating?.number}</span>{rating}</p>
                         <p>Likes: {likes}</p>
                         <button onClick={handleAccept} className='bg-yellow-300 p-3 rounded-lg mt-2'>Favourite</button>
                         </div>
