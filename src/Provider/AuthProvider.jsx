@@ -44,9 +44,8 @@ const AuthProvider = ({ children }) => {
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, loggedUser=> {
-            console.log('ggajhhs', loggedUser)
             setUser(loggedUser);
-            setLoading(false);
+           setLoading(false);
         })
         return () => {
             unsubscribe();

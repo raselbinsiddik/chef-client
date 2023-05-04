@@ -1,7 +1,8 @@
 // eslint-disable-next-line no-unused-vars
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
+import { useState } from 'react';
 
 const Register = () => {
     const [error, setError] = useState();
@@ -43,6 +44,7 @@ const Register = () => {
                 <form onSubmit={handleRegister} className='mt-3'>
                     <label htmlFor="name">name</label><br />
                     <input className='p-4 m-3 border w-96 rounded-lg' type="text" name="name" id="" placeholder='Your Name' required /><br />
+
                    <label htmlFor="photo url">photo Url</label><br />
                     <input className='p-4 m-3 border w-96 rounded-lg' type="text" name="photo" id="" placeholder='photo' required /><br />
                         <label htmlFor="email">email</label><br />
@@ -53,6 +55,7 @@ const Register = () => {
                 
                     <p className='text-danger'>
                         {error}</p><br />
+                    
                     <button type='submit' className='bg-yellow-400 p-3 m-3 text-xl rounded-lg w-72'>Submit</button>
                 </form>
                 Already you have account?<Link to="/login"> Login</Link>

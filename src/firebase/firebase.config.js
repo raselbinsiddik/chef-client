@@ -4,15 +4,18 @@ import { initializeApp } from "firebase/app";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+console.log('environment', import.meta.env.VITE_APIKEY)
 const firebaseConfig = {
-    apiKey: "AIzaSyBCRvCWRbEBdyo8b-Z9t4LRUh2j1P4eyLg",
-    authDomain: "the-chef-server.firebaseapp.com",
-    projectId: "the-chef-server",
-    storageBucket: "the-chef-server.appspot.com",
-    messagingSenderId: "919459566614",
-    appId: "1:919459566614:web:9c2cc2b3e794a00dca5137"
+    apiKey: import.meta.env.VITE_APIKEY,
+    authDomain: import.meta.env.VITE_AUTHDOMAIN,
+    projectId: import.meta.env.VITE_PROJECTID,
+    storageBucket: import.meta.env.VITE_STORAGEBUCKET,
+    messagingSenderId: import.meta.env.VITE_MESSAGEINGSENDERID,
+    appId: import.meta.env.VITE_APPID
+
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 export default app;
+ 

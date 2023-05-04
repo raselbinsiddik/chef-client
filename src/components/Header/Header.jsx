@@ -1,12 +1,15 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
 import {  SiCodechef } from 'react-icons/si';
-import { Button, Container, Nav, Navbar } from 'react-bootstrap';
+import { Container, Nav, Navbar } from 'react-bootstrap';
+// eslint-disable-next-line no-unused-vars
+import Navlink from './Navlink.css'
 
 const Header = () => {
     const { user, logOut } = useContext(AuthContext);
+
 
     const handleLogOut = () => {
         logOut()
@@ -23,10 +26,21 @@ const Header = () => {
                         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                         <Navbar.Collapse id="responsive-navbar-nav">
                             <h1 className='text-2xl font-bold text-red-500 flex'><SiCodechef className='text-3xl mr-2'></SiCodechef> The Chef Server</h1>
-                            <Nav className="mx-auto text-xl">
+                            <Nav className="mx-auto text-xl ">
+                                <NavLink 
+                                    to='/'
+                                    className={({ isActive }) => (isActive ? 'active' : 'default')}
+                                >
+                                    Home
+                                </NavLink>
                                 
-                                <Link to="/" className='mr-5'>Home</Link>
-                                <Link to="/blog">blog</Link>
+                                <NavLink
+                                    to='/blog'
+                                    className={({ isActive }) => (isActive ? 'active' : 'default')}
+                                >
+                                    Blog
+                                </NavLink>
+                               
                                 
 
                             </Nav>
@@ -38,7 +52,7 @@ const Header = () => {
 
                                 {
                                     user ?
-                                        <Button className='text-xl' onClick={handleLogOut} variant="secondery">Logout</Button> : <Link to="/login"><Button className='text-xl' variant="secondery">Login</Button></Link>
+                                        <NavLink onClick={handleLogOut} className={({ isActive }) => (isActive ? 'active' : 'default')}>Logout</NavLink> : <NavLink to="/login" className={({ isActive }) => (isActive ? 'active' : 'default')}>Login</NavLink>
                                 }
 
                             </Nav>

@@ -11,7 +11,7 @@ import { FaRegStar, FaStar } from 'react-icons/fa';
 const Recipe = () => {
     // eslint-disable-next-line no-unused-vars
     const { loading } = useContext(AuthContext);
-    const [accept, setAccept] = useState(false);
+    const [accept, setAccept] = useState();
     const recipe = useLoaderData();
     const { chef_name, chef_picture, food1_img, food2_img, food3_img, likes, description, years_of_experience, num_recipes, rating, recipe_name1, recipe_name2, recipe_name3 } = recipe;
 
@@ -19,10 +19,10 @@ const Recipe = () => {
         return <Spinner animatin="border" variant="primary" />
     }
 
-    const handleAccept = event => {
-        setAccept(event.target.button);
+    const handleAccept = () => {
+       
         toast('the recipe is your favorite is accept')
-        console.log('mksd');
+        
        
     }
    

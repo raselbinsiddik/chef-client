@@ -7,6 +7,7 @@ import Login from "../components/Login/Login";
 import Register from "../components/Register/Register";
 import NotFoun from "../components/NotFound/NotFoun";
 import Blog from "../components/Blog/Blog";
+import Private from "../components/Private/Private";
 
 // eslint-disable-next-line no-unused-vars
 const router = createBrowserRouter([
@@ -25,7 +26,7 @@ const router = createBrowserRouter([
            
             {
                 path: 'recipe/:id',
-                element: <Recipe></Recipe>,
+                element: <Private><Recipe></Recipe></Private>,
                 loader: ({ params }) => fetch(`http://localhost:5000/chef/${params.id}`)
             },
             {

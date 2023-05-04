@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import {  getAuth, signInWithPopup } from 'firebase/auth';
 import {  FaGoogle, FaGithub} from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import app from '../../firebase/firebase.config';
 import { useContext, useState } from 'react';
 import { AuthContext } from '../../Provider/AuthProvider';
@@ -12,6 +12,12 @@ const Login = () => {
     const [error, setError] = useState();
 
     const { googleProvider, githubProvider, loginUser } = useContext(AuthContext);
+
+    const navigate = useNavigate();
+    const location = useLocation();
+    console.log(location);
+    const from = location.state?.from?.pathname || '/recipe/:id'
+
 
     const handleLogin = event => {
         event.preventDefault();
@@ -30,6 +36,7 @@ const Login = () => {
             .then(result => {
                 const login = result.user;
                 console.log(login);
+                navigate(from, { replace: true })
             })
             .catch(error => {
                 console.log(error);
@@ -82,8 +89,11 @@ const Login = () => {
                 </form>
                 Do not have account?<Link to="/register"> Register</Link>
             </div>
+
+
             <div className='mt-4 text-xl'>
                 <p className='bg-slate-100 p-2 mx-auto w-52 '><button onClick={handleGoogleSignIn} className='flex'><FaGoogle className='text-green-600 mt-1 mr-2'></FaGoogle> Google Sign in</button></p>
+
 
                 <p className='bg-slate-100 p-2 mx-auto w-52 mt-2'><button onClick={handleGitHubSignIn} className='flex '><FaGithub className='text-green-600 mt-1 mr-2'></FaGithub> Github Sign in</button> </p>
                 
