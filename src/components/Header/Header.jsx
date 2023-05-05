@@ -52,7 +52,8 @@ const Header = () => {
 
                                 {
                                     user ?
-                                        <NavLink onClick={handleLogOut} className={({ isActive }) => (isActive ? 'active' : 'default')}>Logout</NavLink> : <NavLink to="/login" className={({ isActive }) => (isActive ? 'active' : 'default')}>Login</NavLink>
+                                        <NavLink onClick={handleLogOut} className={({ isActive }) => (isActive ? 'active' : 'default')}>Logout</NavLink> :
+                                        <NavLink to="/login" className={({ isActive }) => (isActive ? 'active' : 'default')}>Login</NavLink>
                                 }
 
                             </Nav>

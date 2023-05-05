@@ -17,12 +17,13 @@ const router = createBrowserRouter([
         children: [
             {
                 path: '/',
-                element:<Banner></Banner>
+                element: <Banner></Banner>
             },
             {
                 path: '/',
-                element:<Home></Home>
+                element: <Home></Home>
             },
+            
            
             {
                 path: 'recipe/:id',
@@ -31,23 +32,27 @@ const router = createBrowserRouter([
             },
             {
                 path: 'login',
-                element:<Login></Login>
+                element: <Login></Login>
             },
+           
             {
                 path: 'register',
-                element:<Register></Register>
+                element: <Register></Register>
             },
             {
                 path: '/blog',
-                element:<Blog></Blog>
+                element: <Blog></Blog>
             }
             
         ]
+        
     },
+    
     {
         path: '*',
         element: <NotFoun></NotFoun>
     }
+   
 
 ])
 export default router;
