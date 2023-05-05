@@ -16,7 +16,7 @@ const Login = () => {
     const navigate = useNavigate();
     const location = useLocation();
     console.log(location);
-    const from = location.state?.from?.pathname || '/recipe/';
+    const from = location.state?.from?.pathname || '/';
 
 
     const handleLogin = event => {

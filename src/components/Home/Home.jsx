@@ -88,7 +88,7 @@ const Home = () => {
                     </p>
                </div>
                 {
-                    chefs.map(chef => <HomeData key={chef}
+                    chefs.map(chef => <HomeData key={chef.id}
                         chef={chef}></HomeData>)
                 }
             </div>
